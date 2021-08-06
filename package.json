@@ -6,7 +6,11 @@
   "name": "vtuber-wiki",
   "description": "<div align=\"center\">\r <img src=\"src/img/01.jpeg\"alt=\"Sukoya Kana\" width=\"500\"/>",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist",
+  "files": [
+    "dist"
+  ],
   "directories": {
     "test": "test"
   },
