@@ -4,7 +4,7 @@ import get from 'axios';
 export const wiki = async (data: string) => {
 
 let obj:any={}
-const wikia = new  new HermitPurple("virtualyoutuber", 1); // fandom, search limit
+const wikia =new HermitPurple("virtualyoutuber", 1); // fandom, search limit
 try{
 await  wikia.search(data).then(async(a:any)=>{
      await a

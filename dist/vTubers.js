@@ -17,7 +17,7 @@ const HermitPurple = require('hermitpurple').default;
 const axios_1 = __importDefault(require("axios"));
 const wiki = (data) => __awaiter(void 0, void 0, void 0, function* () {
     let obj = {};
-    const wikia = new new HermitPurple("virtualyoutuber", 1); // fandom, search limit
+    const wikia = new HermitPurple("virtualyoutuber", 1); // fandom, search limit
     try {
         yield wikia.search(data).then((a) => __awaiter(void 0, void 0, void 0, function* () {
             yield a;
