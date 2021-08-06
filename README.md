@@ -18,6 +18,7 @@
 ```TS 
 import * as vTuber from 'vTuber-wiki'
 // const vTuber = require("vTuber-wiki) ; for Js
+
 vTuber.wiki(`Sukoya Kana`).then(async(output)=>{
 
     console.log(output)
