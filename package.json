@@ -2,5 +2,34 @@
   "dependencies": {
     "axios": "^0.21.1",
     "hermitpurple": "^0.2.0"
-  }
+  },
+  "name": "vtuber-wiki",
+  "description": "<div align=\"center\">\r <img src=\"src/img/01.jpeg\"alt=\"Sukoya Kana\" width=\"500\"/>",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TentacleSama4254/vTuber-wiki.git"
+  },
+  "keywords": [
+    "vtuber",
+    "hololive",
+    "nijisanji",
+    "wiki",
+    "scrapper",
+    "fandom"
+  ],
+  "author": "TentacleSama:3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TentacleSama4254/vTuber-wiki/issues"
+  },
+  "homepage": "https://github.com/TentacleSama4254/vTuber-wiki#readme"
 }

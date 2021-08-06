@@ -1,12 +1,12 @@
-import hermitpurple from 'hermitpurple';
+const HermitPurple = require('hermitpurple').default;
 import get from 'axios';
 
 export const wiki = async (data: string) => {
 
-let obj={}
-const wikia = new hermitpurple("virtualyoutuber", 1); // fandom, search limit
+let obj:any={}
+const wikia = new  new HermitPurple("virtualyoutuber", 1); // fandom, search limit
 try{
-await  wikia.search(data).then(async(a)=>{
+await  wikia.search(data).then(async(a:any)=>{
      await a
     //console.log(a[0])
 let id=Number(a[0].id)
@@ -16,15 +16,15 @@ var data = rp.data.query.pages[id].revisions[0]['*']
 //console.log(data)
 var s1= data.split('{{')
 //console.log(s1)
-var s2 = s1.filter(m=>m.includes('channel'))
+var s2 = s1.filter((m:string)=>m.includes('channel'))
 //console.log(s2)
 var s3= s2[0].split('|')
-var s4 = s3.filter(m=>m.includes('='))
+var s4 = s3.filter((m:string)=>m.includes('='))
 //console.log(s4)
-var s5 = s4.filter(m=>!m.includes('}}')&&!m.includes('=='))
+var s5 = s4.filter((m:string)=>!m.includes('}}')&&!m.includes('=='))
 //console.log(s5)
 var s6 =data.split('\n')
-var s7 =s6.filter(m=>!m.includes('}}')&&!m.includes('==')&&!m.includes('=')&&m.includes(`'''`))
+var s7 =s6.filter((m:string)=>!m.includes('}}')&&!m.includes('==')&&!m.includes('=')&&m.includes(`'''`))
 s5.push(`description  = ${s7[0].replace(` '''`,'* ').replace(`'''`,'*')}`)
 s5.push(`image_url  = ${img}`)
 s5.push(`more  = ${a[0].url}`)
