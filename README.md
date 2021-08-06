@@ -11,7 +11,7 @@
 # Install
 
 ```cmd
-> npm i vTuber-wiki
+> npm i vtuber-wiki
 ```
 
 # How-to
