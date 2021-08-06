@@ -51,4 +51,7 @@ vTuber.wiki(`Sukoya Kana`).then(async(output)=>{
   image_url: 'https://static.wikia.nocookie.net/virtualyoutuber/images/4/42/Sukoya_Kana_Portrait.png/revision/latest/scale-to-width-down/350?cb',
   more: 'https://virtualyoutuber.fandom.com/wiki/Sukoya_Kana'
 }
+
+// will return null if no results
+
 ```
