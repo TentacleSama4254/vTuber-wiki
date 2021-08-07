@@ -3,23 +3,26 @@
 
 # _**vTUBER-WIKI**_
 
-> This is a small scraper i made for [https://virtualyoutuber.fandom.com](https://virtualyoutuber.fandom.com)  using their officail api and [hermitPurple](https://www.npmjs.com/package/hermitpurple)
+> This is a small scraper i made for [https://virtualyoutuber.fandom.com](https://virtualyoutuber.fandom.com) using their officail api and [hermitPurple](https://www.npmjs.com/package/hermitpurple)
+
 </div>
 <br>
 
 # Install
+
 ```cmd
-> npm i vTuber-wiki
+> npm i vtuber-wiki
 ```
 
 # How-to
 
 ### Typescript/javascript
-```TS 
-import * as vTuber from 'vTuber-wiki'
-// const vTuber = require("vTuber-wiki) ; for Js
 
-vTuber.wiki(`Sukoya Kana`).then(async(output)=>{
+```TS
+import { wiki } from 'vTuber-wiki'
+// const { wiki } = require("vTuber-wiki); for CommonJs
+
+wiki(`Sukoya Kana`).then(async(output)=>{
 
     console.log(output)
 })
@@ -27,7 +30,8 @@ vTuber.wiki(`Sukoya Kana`).then(async(output)=>{
 ```
 
 ## Example output
-```TS 
+
+```TS
  {
   title1: 'Sukoya Kana',
   image1: 'Sukoya Kana Portrait.png',
@@ -51,4 +55,7 @@ vTuber.wiki(`Sukoya Kana`).then(async(output)=>{
   image_url: 'https://static.wikia.nocookie.net/virtualyoutuber/images/4/42/Sukoya_Kana_Portrait.png/revision/latest/scale-to-width-down/350?cb',
   more: 'https://virtualyoutuber.fandom.com/wiki/Sukoya_Kana'
 }
+
+// will return null if no results
+
 ```
