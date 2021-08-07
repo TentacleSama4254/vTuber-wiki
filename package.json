@@ -4,8 +4,8 @@
     "hermitpurple": "^0.2.0"
   },
   "name": "vtuber-wiki",
-  "description": "<div align=\"center\">\r <img src=\"src/img/01.jpeg\"alt=\"Sukoya Kana\" width=\"500\"/>",
-  "version": "1.0.0",
+  "description": "vTuber info scapper for wiki",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "types": "dist",
   "files": [
