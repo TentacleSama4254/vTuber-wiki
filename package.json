@@ -5,7 +5,7 @@
   },
   "name": "vtuber-wiki",
   "description": "vTuber info scapper for wiki",
-  "version": "1.0.2",
+  "version": "1.1.5",
   "main": "dist/index.js",
   "types": "dist",
   "files": [

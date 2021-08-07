@@ -16,46 +16,38 @@ exports.wiki = void 0;
 const HermitPurple = require('hermitpurple').default;
 const axios_1 = __importDefault(require("axios"));
 const wiki = (data) => __awaiter(void 0, void 0, void 0, function* () {
-    let obj = {};
-    const wikia = new HermitPurple("virtualyoutuber", 1); // fandom, search limit
+    var _a;
+    const obj = {};
+    const wikia = new HermitPurple('virtualyoutuber', 1); // fandom, search limit
     try {
-        yield wikia.search(data).then((a) => __awaiter(void 0, void 0, void 0, function* () {
-            yield a;
-            //console.log(a[0])
-            let id = Number(a[0].id);
-            let img = a[0].img;
-            yield axios_1.default(`https://virtualyoutuber.fandom.com/api.php?action=query&prop=revisions&pageids=${id}&rvprop=content&format=json`).then((rp) => __awaiter(void 0, void 0, void 0, function* () {
-                var data = rp.data.query.pages[id].revisions[0]['*'];
-                //console.log(data)
-                var s1 = data.split('{{');
-                //console.log(s1)
-                var s2 = s1.filter((m) => m.includes('channel'));
-                //console.log(s2)
-                var s3 = s2[0].split('|');
-                var s4 = s3.filter((m) => m.includes('='));
-                //console.log(s4)
-                var s5 = s4.filter((m) => !m.includes('}}') && !m.includes('=='));
-                //console.log(s5)
-                var s6 = data.split('\n');
-                var s7 = s6.filter((m) => !m.includes('}}') && !m.includes('==') && !m.includes('=') && m.includes(`'''`));
-                s5.push(`description  = ${s7[0].replace(` '''`, '* ').replace(`'''`, '*')}`);
-                s5.push(`image_url  = ${img}`);
-                s5.push(`more  = ${a[0].url}`);
-                for (const key of s5) {
-                    var e1 = [key][0].split('=');
-                    var e2 = e1[0].trim();
-                    obj[e2] = e1[1].replace(`\n`, '').replace('[', '').replace(']', '').replace('\n', '').trim();
-                }
-                //console.log(obj)
-                return obj;
-            }));
-        }));
+        const a = yield wikia.search(data);
+        const id = Number(a[0].id);
+        const img = a[0].img;
+        const { data: resp } = yield axios_1.default.get(`https://virtualyoutuber.fandom.com/api.php?action=query&prop=revisions&pageids=${id}&rvprop=content&format=json`);
+        const resdata = resp.query.pages[id].revisions[0]['*'];
+        const s = (_a = resdata
+            .split('{{')) === null || _a === void 0 ? void 0 : _a.filter((m) => m.includes('channel'))[0].split('|').filter((m) => m.includes('='));
+        const s2 = s.filter((m) => !m.includes('}}') && !m.includes('=='));
+        s2.push(`description  = ${resdata
+            .split('\n')
+            .filter((m) => !m.includes('}}') && !m.includes('==') && !m.includes('=') && m.includes(`'''`))[0]
+            .replace(` '''`, '* ')
+            .replace(`'''`, '*')}`, `image_url  = ${img}`, `more  = ${a[0].url}`);
+        for (const key of s2) {
+            const e1 = [key][0].split('=');
+            const e2 = e1[0].trim();
+            obj[e2] = e1[1]
+                .replace(`\n`, '')
+                .replace('[', '')
+                .replace(']', '')
+                .replace('\n', '')
+                .trim();
+        }
+        return obj;
     }
     catch (err) {
-        console.log("vTuber not Found");
-        obj = null;
+        return null;
     }
-    return obj;
 });
 exports.wiki = wiki;
 //# sourceMappingURL=vTubers.js.map
